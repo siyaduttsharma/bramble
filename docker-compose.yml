@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  ingestion:
+    build: 
+      context: ./services/ingestion
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  risk-brain:
+    build:
+      context: ./services/risk-brain
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  frontend:
+    build:
+      context: ./services/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_INGESTION_API=http://localhost:3001
+      - VITE_BRAIN_API=http://localhost:8000
+    depends_on:
+      - ingestion
+      - risk-brain
+
+volumes:
+  redis_data:

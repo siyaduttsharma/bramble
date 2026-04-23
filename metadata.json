@@ -1,0 +1,6 @@
+{
+  "name": "Bramble",
+  "description": "A real-time subscription fraud detection engine with behavioral ingestion, ML scoring, and an analyst dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
