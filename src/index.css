@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#FDFCFB] text-[#1A1A1A] font-sans h-screen overflow-hidden antialiased;
+  }
+
+  /* Custom scrollbar for elegant aesthetic */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-50;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+  }
+}
+
+@layer components {
+  .sidebar-border {
+    @apply border-slate-200;
+  }
+  
+  .badge-block {
+    @apply bg-rose-500 text-white font-bold;
+  }
+  
+  .badge-greylist {
+    @apply bg-amber-400 text-black font-bold;
+  }
+  
+  .badge-pass {
+    @apply bg-teal-500 text-white font-bold;
+  }
+
+  .accent-main {
+    @apply text-[#1A1A1A];
+  }
+
+  .accent-main-bg {
+    @apply bg-[#1A1A1A];
+  }
+
+  .mono-label {
+    @apply text-[10px] uppercase font-mono tracking-widest text-slate-400;
+  }
+
+  .elegant-card {
+    @apply bg-white border border-slate-100 shadow-sm rounded-xl;
+  }
+}
