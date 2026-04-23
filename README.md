@@ -1,10 +1,10 @@
-# 🌿 Bramble | Trust & Safety Command Center
+# Bramble
 
 Bramble is a real-time behavioral defense engine designed to stop sophisticated bots and fraudulent actors at the point of entry. Unlike traditional security that relies on intrusive CAPTCHAs, Bramble uses **Invisible Biometrics** and **Heuristic Risk Scoring** to protect your platform without compromising user experience.
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 graph LR
@@ -32,7 +32,7 @@ graph LR
 
 ---
 
-## 🧠 The Bramble Risk Model
+## The Bramble Risk Model
 
 Bramble employs a **Hybrid Intelligence** approach to scoring risk, combining deterministic rules with behavior-based anomaly detection.
 
@@ -101,7 +101,7 @@ The application will be available at `http://localhost:3000`.
 
 ---
 
-## 🛠️ Security Indicators
+## Security Indicators
 Bramble evaluates sessions against several "Indicators of Risk":
 
 *   **BOT_TYPING**: Typing cadence faster than human physical limits (< 400ms interval).
@@ -112,5 +112,5 @@ Bramble evaluates sessions against several "Indicators of Risk":
 
 ---
 
-## 🧪 Simulation Testing
+## Simulation Testing
 Use the **Global Controls** panel in the Analyst Dashboard to trigger synthetic attacks and observe how the Risk Brain calculates scores and updates the Log in real-time.
