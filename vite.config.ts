@@ -17,7 +17,9 @@ export default defineConfig(({mode}) => {
     },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
-      allowedHosts: bramble-dc78.onrender.com,
+      allowedHosts: [
+        'bramble-dc78.onrender.com'
+      ]
     },
   };
 });
